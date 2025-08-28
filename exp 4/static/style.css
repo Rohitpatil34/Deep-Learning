@@ -1,0 +1,47 @@
+body{
+  font-family: Georgia, 'Times New Roman', serif;
+  text-align:center;
+  background:#f7f7f7;
+  color:#111;
+}
+h1{
+  font-size:56px;
+  margin-top:30px;
+  margin-bottom:6px;
+}
+.subtitle{
+  font-size:22px;
+  margin-bottom:14px;
+}
+.preview-box{
+  width:260px;
+  height:260px;
+  margin:18px auto;
+  border:2px solid #111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+}
+.preview-box img{
+  width:200px;
+  height:200px;
+  object-fit:cover;
+  background:#000;
+}
+.btn{
+  padding:8px 16px;
+  border:1px solid #333;
+  background:#eee;
+  cursor:pointer;
+  margin-top:6px;
+}
+.prediction{
+  margin-top:18px;
+  font-size:22px;
+}
+.prediction .value{
+  margin-left:8px;
+  font-weight:bold;
+  font-size:24px;
+}
