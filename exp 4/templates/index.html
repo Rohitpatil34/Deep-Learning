@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Emotion Detection</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <h1>Emotion Detection</h1>
+    <p class="subtitle">
+      Categories (0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral)
+    </p>
+
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" accept="image/*" required />
+      <div class="preview-box">
+        <img id="preview" src="#" alt="preview" />
+      </div>
+      <button class="btn" type="submit">Predict</button>
+    </form>
+
+    <div class="prediction">
+      <span>Prediction:</span>
+      <span class="value">{{ prediction }}</span>
+    </div>
+
+    <script>
+      const input = document.querySelector('input[type="file"]');
+      const img = document.getElementById('preview');
+      img.style.display = 'none';
+      input.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          img.src = reader.result;
+          img.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      });
+    </script>
+  </body>
+</html>
